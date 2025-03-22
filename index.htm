@@ -78,7 +78,7 @@ body {
         "main main"
         "footer footer";
     /*grid-template-rows: 10vh 80vh 10vh;*/
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-rows: auto 4fr auto;
     
     height: 100vh;
     
@@ -166,33 +166,22 @@ color: {color:Background};
 }
 
 .container {
-    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
-    /*top:0;*/
-    /*position: fixed;*/
-    /*margin-top:8vh;*/
-    /*margin-left:30vw;*/
-    /*width:650px;*/
-    overflow-y:scroll;
+    
+    overflow-y:hidden;
     overflow-x:hidden;
-    /*padding: 0;*/
-    /*height:90vh;*/
-}
-
-.postbox {
-    /*grid-area: main;*/
-/*position: fixed;*/
-/*margin:0px 0px 0px 125px;*/
-/*width: 425px;*/
-/*padding: 0;*/
-/*background:transparent;*/
-border: 2px solid blue;
+    
+    border: 2px solid blue;
+    grid-area: main;
 }
 
 .post {
 padding:10px;
 width:600px;
-margin-bottom:50px;
+margin:50px 0px 50px 0px;
 
 border: 2px solid yellow;
 }
@@ -350,7 +339,6 @@ cd /e/study/{Title}
 
 <!-- container -->
 <div class="container">
-<div class="postbox">
 {block:Posts}
 <div class="post">
 
@@ -495,7 +483,6 @@ href="{Permalink}">{TimeAgo}</a>{/block:Date}
 </div>
 </div>
 {/block:Posts}
-</div> <!--end postbox-->
 </div><!--end container-->
 
 <!--footer-->
