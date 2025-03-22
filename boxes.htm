@@ -1,119 +1,138 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/w3css/5/w3.css" />
 
     <style>
-        body {
-            font-family: VT323, monospace;
-            font-weight: 500;
-            font-size: .9em;
-            background-color: #003b64;
-            color: #73cdee;
+      body {
+          font-family: VT323, monospace;
+          font-weight: 500;
+          font-size: .9em;
+          background-color: #003b64;
+          color: #73cdee;
+      }
+
+      #container {
+          display: grid;
+              grid-template-rows: 1fr 6fr 1fr;
+          border: 2px solid black;
+          height:100vh;
+      }
+
+      #container > div {
+          /*border: 1px solid red;*/
+      }
+
+      #header {
+          align-items: center;
+          justify-content: center;
+          /*border: 2px solid green;*/
+          padding: 2vh;
+          border-bottom: 6px double #73cdee;
+      }
+
+      #topbar {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-weight: 800;
+          font-size: 1.25em;
+          padding 5vh;
+          border: 2px solid #73cdee;
+      }
+
+      #topbar > div {
+          padding: 1vw;
+          /*border: 2px solid blue;*/
+      }
+
+      #location {
+          flex-grow: 1;
+      }
+
+      #completed {
+          flex-grow: 5;
+          font-size: 1.1em;
+          font-weight: 900;
+          text-align: right;
+          color: #003b64;
+          -webkit-text-stroke: 1.5px #73cdee;
+      }
+
+
+      #logo {
+          flex-grow: 1;
+          color: #fff;
+          text-align: center;
+      }
+
+      #footer {
+          
+          border-top: 6px double #73cdee;
+          background-color: gray;
+      }
+
+      #folders {
+          
+          background-color:lightgreen;
+      }
+
+      #folders div {
+          padding: 10px;
+          border: 1px solid yellow;
+          /*background-color:pink;*/
+      }
+
+        .folder {
+            background-color:pink;
         }
-        
-        #container {
-            display: grid;
-                grid-template-rows: 1fr 6fr 1fr;
-            border: 2px solid black;
-            height:100vh;
-        }
-        
-        #container > div {
-            /*border: 1px solid red;*/
-        }
-        
-        #header {
-            align-items: center;
-            justify-content: center;
-            /*border: 2px solid green;*/
-            padding: 2vh;
-            border-bottom: 6px double #73cdee;
-        }
-        
-        #topbar {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            font-weight: 800;
-            font-size: 1.25em;
-            padding 5vh;
-            border: 2px solid #73cdee;
-        }
-        
-        #topbar > div {
-            padding: 1vw;
-            /*border: 2px solid blue;*/
-        }
-        
-        #location {
-            flex-grow: 1;
-        }
-        
-        #completed {
-            flex-grow: 5;
-            font-size: 1.1em;
-            font-weight: 900;
-            text-align: right;
-            color: #003b64;
-            -webkit-text-stroke: 1.5px #73cdee;
-        }
-        
-        
-        #logo {
-            flex-grow: 1;
-            color: #fff;
-            text-align: center;
-        }
-        
-        #footer {
-            border-top: 6px double #73cdee;
-        }
-        
-        #folders > div {
-            border: 1px solid yellow;
-        }
-        
-        .progress {
-            border: 1px solid white;
-        }
-        
+
+      .progress {
+          /*border: 1px solid white;*/
+      }
     </style>
-</head>
-<body>
-<div id="container">
-    <div id="header">
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
         <div id="topbar">
-            <div id="location">
-                Dronesville
-            </div>
-            <div id="completed">
-                19% Complete
-            </div>
-            <div id="logo">
-                LUMEN
-            </div>
+          <div id="location">Dronesville</div>
+          <div id="completed">19% Complete</div>
+          <div id="logo">LUMEN</div>
         </div>
-    </div>
-    
-    <div id="main">
-        2
-    </div>
-    
-    <div id="footer">
+      </div>
+
+      <div id="main">2</div>
+
+      <div id="footer">
         <div id="folders">
-            <div>
-                <a href="/">01</a>
-                <div class="progress w3-container w3-cyan" style="height:24px;width:20%">20%</div>
-            </div>
-            <div>02</div>
-            <div>03</div>
-            <div>04</div>
-            <div>05</div>
-        </div>
+          <div class="folder">
+            <a href="/">01</a>
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 40%"> 40% </div>
+          </div>
+          
+          <div class="folder">
+            <a href="/">01</a>
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 20%"> 20% </div>
+          </div>
+          
+          <div class="folder">
+            <a href="/">01</a>
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 9%"> 9% </div>
+          </div>
+          
+          <div class="folder">
+            <a href="/">01</a>
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 20%"> 20% </div>
+          </div>
+          
+          <div class="folder">
+            <a href="/">01</a>
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 34%"> 34% </div>
+          </div>
+      </div>
     </div>
-    
-</div>
-</body>
+  </body>
 </html>
