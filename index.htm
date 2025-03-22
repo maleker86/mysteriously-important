@@ -83,9 +83,11 @@ body {
         "main main"
         "footer footer";
     /*grid-template-rows: 10vh 80vh 10vh;*/
-    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-rows: auto 8fr auto;
     
-    height: 100vh;
+    height: calc(100vh - 40px);
+    
+    margin-top: 40px;
     
     background-color:{color:Background};
     color:{color:Accent};
@@ -132,24 +134,80 @@ h3 {
 
 #header {
     grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     border:1px solid {color:Accent};
     text-align:center;
 }
 #header p {
     /*padding:0px 2px 0px 2px;*/
 }
+
 .blogtitle {
     color:{color:Accent};
     font-size:20px;
     font-weight:500;
 }
-.icon {
-    padding:5px;
-    display:block;
+
+#logo {
+    display: inline-block;
+    margin-right: 0px;
 }
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    /*left: 50px;*/
+    /*justify-content: center;*/
+    position: absolute;
+    background: transparent;
+    
+}
+
+.logo-1 {
+    position: absolute;
+      width: 200px;
+      height: 100px;
+      background: transparent;
+      border: 5px solid {color:Accent};
+      border-radius: 100px / 50px;
+}    
+
+.logo-2 {
+    position: absolute;
+      width: 150px;
+      height: 100px;
+      /*margin-left:25px;*/
+      background: transparent;
+      border: 5px solid {color:Accent};
+      border-radius: 75px / 50px;
+}    
+
+.logo-3 {
+    position: absolute;
+      width: 100px;
+      height: 100px;
+      /*margin-left:50px;*/
+      background: transparent;
+      border: 5px solid {color:Accent};
+      border-radius: 50px / 50px;
+}
+
+
+.logo-1, .logo-2, .logo-3 {
+    transform: scale(.65);
+}
+
+
 .description {
     text-align:center;
-    display:block;
+    /*display:block;*/
 }
 .description ol, ul {
     /*text-align:left;*/
@@ -315,30 +373,23 @@ text-decoration:none;
 title="theme by additionalhopes"><span class="lnr
 lnr-code"></span>A.</a></div>
 <div id="header">
-<div class="blogtitle">I:\>ipconfig /{Name}
-<br>
-cd /e/study/{Title}
+<div class="blogtitle">{Name}: {Title}
 </div>
-<div class="icon">
 
-<img src="{PortraitURL-40}"/>
-
-</div>
 {block:Description}
 <div class="description">
 {Description}
-
-<!--<p>Confectura Industries [Version 9.28.2020]<br>-->
-<!--(c) 2020 additionalhopes. All right reserved.</p>-->
-
 </div>
 {/block:Description}
-<div class="pagination">
-{block:PreviousPage}<a href="{PreviousPage}">«
-</a>{/block:PreviousPage}
-{CurrentPage} / {TotalPages}
-{block:NextPage}<a href="{NextPage}"> »</a>{/block:NextPage}
-</div>
+
+    <div id="logo">
+        <div class="logo-container">
+            <div class="icon"><img src="{PortraitURL-40}"/></div>
+                <div class="logo-1"></div>
+                <div class="logo-2"></div>
+                <div class="logo-3"></div>
+            </div>
+        </div>
 
 </div> <!--header-->
 
@@ -500,6 +551,12 @@ href="{Permalink}">{TimeAgo}</a>{/block:Date}
 <a href="{text:Link2URL}">{text:Link2Title}</a>
 <a href="{text:Link3URL}">{text:Link3Title}</a>
 <a href="/archive">Archive</a>
+<p><div class="pagination">
+{block:PreviousPage}<a href="{PreviousPage}">«
+</a>{/block:PreviousPage}
+{CurrentPage} / {TotalPages}
+{block:NextPage}<a href="{NextPage}"> »</a>{/block:NextPage}
+</div></p>
 
 </div> <!--end footer-->
 
