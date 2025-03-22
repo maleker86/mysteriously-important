@@ -52,7 +52,7 @@ rel="stylesheet">
 content="https://static.tumblr.com/s6sxlad/Z3Gqhfhyl/fsocmask_4.png"/
 >
 <meta name="color:Post Header" content="#eee"/>
-<meta name="color:Accent" content="#00ff33"/>
+<meta name="color:Accent" content="##68dbff"/>
 <meta name="color:Background" content="#000"/>
 <meta name="text:Link1Title" content="Title 1"/>
 <meta name="text:Link1URL" content="/"/>
@@ -61,175 +61,140 @@ content="https://static.tumblr.com/s6sxlad/Z3Gqhfhyl/fsocmask_4.png"/
 <meta name="text:Link3Title" content="Title 3"/>
 <meta name="text:Link3URL" content="/"/>
 <style type="text/css">
+
 ::-webkit-scrollbar {
 width:12px;
 background-color:{color:Background};
 }
-
 ::-webkit-scrollbar-thumb {
 border:solid 3px {color:Background};
 background-color:{color:Accent};
 }
-body {
-background-color:{color:Background};
-color:{color:Accent};
-position:absolute;
 
-/*--
-background-image: url('{image:Background}');
-background-repeat: no-repeat;
-background-size: center;
-background-attachment: fixed;
---*/
-font-family: 'VT323', monospace;
-font-size:1rem;
-margin:0px 0px 0px 0px;
-overflow-x:hidden;
+body {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+    /*grid-template-rows: 10vh 80vh 10vh;*/
+    grid-template-rows: 1fr 4fr 1fr;
+    
+    height: 100vh;
+    
+    background-color:{color:Background};
+    color:{color:Accent};
+    
+    font-family: 'VT323', monospace;
+    font-size:1rem;
 }
+
 a {
-color:{color:Accent};
-text-decoration:none;
-border-bottom:dotted {color:Accent};
-padding-bottom:3px;
+    color:{color:Accent};
+    text-decoration:none;
+    border-bottom:dotted {color:Accent};
+    padding-bottom:3px;
 }
 a:hover {
-color:{color:Background};
-background-color:{color:Accent};
-transition: all 0.5s ease;
+    color:{color:Background};
+    background-color:{color:Accent};
+    transition: all 0.5s ease;
 }
 b, bold, strong {
-text-transform:uppercase;
-color:{color:Background};
-background:{color:Accent};
+    text-transform:uppercase;
+    color:{color:Background};
+    background:{color:Accent};
 }
 
 h2 {
-font-size:1.5rem;
-margin:5px 0px 0px 0px;
-font-weight:500;
+    font-size:1.5rem;
+    margin:5px 0px 0px 0px;
+    font-weight:500;
 }
 h3 {
-font-size:2rem;
-color:{color:Post Header};
-text-align:center;
-text-shadow:-2px -1px 1px {color:Accent},
-3px 1px 1px {color:Background};
+    font-size:2rem;
+    color:{color:Post Header};
+    text-align:center;
+    text-shadow:-2px -1px 1px {color:Accent},
+    3px 1px 1px {color:Background};
+    
+    font-weight:500;
 
-font-weight:500;
-width:100%;
-background-position:top;
-background-attachment:fixed;
-background-size:auto repeat;
-background-image: url("{image:Post Header}");
-margin:0px;
-padding-top:10px;
-padding-bottom:10px;
+    margin:0px;
+    padding-top:10px;
+    padding-bottom:10px;
 }
-#sidebar {
-border-right:1px solid {color:Accent};
-border-bottom:{color:Accent} 1px solid;
-position:fixed;
-display:inline block;
-width:30vw;
-margin:0;
-height:70vh;
-text-align:center;
-z-index:2;
-overflow-y:auto;
+
+#header {
+    grid-area: header;
+    border:1px solid {color:Accent};
+    text-align:center;
 }
-#sidebar p {
-padding:0px 2px 0px 2px;
+#header p {
+    /*padding:0px 2px 0px 2px;*/
 }
 .blogtitle {
-color:{color:Accent};
-margin-top:10px;
-padding:5px;
-font-size:20px;
-font-weight:500;
+    color:{color:Accent};
+    font-size:20px;
+    font-weight:500;
 }
 .icon {
-padding:5px;
-display:block;
+    padding:5px;
+    display:block;
 }
 .description {
-text-align:center;
-padding:5px;
-overflow-y:auto;
-
-overflow-x:hidden;
-max-height:38vh;
-display:block;
-margin-bottom:20px;
+    text-align:center;
+    display:block;
 }
 .description ol, ul {
-text-align:left;
-padding-left:25%;
+    /*text-align:left;*/
+    /*padding-left:25%;*/
 }
 
-#sidebar .pagination {
-position:absolute;
-bottom:0px;
-left:45%;
-height:20px;
-padding: 3px 0;
-color:{color:Accent};
+#header .pagination {
+    margin-bottom:10px;
+    /*display: block;*/
+    /*position:absolute;*/
+    color:{color:Accent};
 }
-#sidebar .pagination a {
+#header .pagination a {
 color: {color:Accent};
 text-decoration: none;
 }
-#sidebar .pagination a:hover {
+#header .pagination a:hover {
 color: {color:Background};
-}
-#menu {
-position:fixed;
-width:30vw;
-margin-left:0px;
-bottom:0;
-margin-top:70vh;
-height:30vh;
-z-index:1;
-overflow-y:auto;
-border-right:1px solid {color:Accent};
-}
-.menu a {
-margin:5px;
-text-transform:uppercase;
-
-letter-spacing:1px;
-text-align:center;
-padding:2px;
-display:block;
-}
-.menu a:hover {
-background-color:{color:Accent};
-color:{color:Background};
 }
 
 .container {
-top:0;
-position: fixed;
-margin-top:8vh;
-margin-left:30vw;
-width:650px;
-overflow-y:scroll;
-overflow-x:hidden;
-padding: 0;
-height:90vh;
+    grid-area: main;
+    
+    /*top:0;*/
+    /*position: fixed;*/
+    /*margin-top:8vh;*/
+    /*margin-left:30vw;*/
+    /*width:650px;*/
+    overflow-y:scroll;
+    overflow-x:hidden;
+    /*padding: 0;*/
+    /*height:90vh;*/
 }
 
 .postbox {
-position: relative;
-margin:0px 0px 0px 125px;
-width: 425px;
-padding: 0;
-background:transparent;
+    /*grid-area: main;*/
+/*position: fixed;*/
+/*margin:0px 0px 0px 125px;*/
+/*width: 425px;*/
+/*padding: 0;*/
+/*background:transparent;*/
+border: 2px solid blue;
 }
 
 .post {
 padding:10px;
-width:400px;
+width:600px;
 margin-bottom:50px;
+
+border: 2px solid yellow;
 }
 .post img {
 max-width:400px;
@@ -286,10 +251,46 @@ border-left:solid 1px {color:Accent};
 padding-left:15px;
 margin-left:10px;
 }
+
+
 #info {
 border-top: solid 1px {color:Accent};
 padding-top:10px;
 }
+
+#footer {
+    grid-area: footer;
+  display: flex;
+  flex-direction: column;
+    
+    /*width:30vw;*/
+    /*margin-left:0px;*/
+    /*bottom:0;*/
+    /*margin-top:70vh;*/
+    /*height:30vh;*/
+    /*z-index:1;*/
+    /*overflow-y:auto;*/
+    border:1px solid {color:Accent};
+}
+
+#footer * {
+    border: 1px solid cyan;
+}
+
+.footer a {
+    /*margin:5px;*/
+    text-transform:uppercase;
+    
+    letter-spacing:1px;
+    /*text-align:center;*/
+    /*padding:2px;*/
+    /*display:inline-block;*/
+}
+.footer a:hover {
+background-color:{color:Accent};
+color:{color:Background};
+}
+
 /*---CREDIT hey! don't touch you nerd!---*/
 #credit {
 z-index:9999999999;
@@ -318,7 +319,7 @@ text-decoration:none;
 <div id="credit"><a href="https://additionalhopes.tumblr.com"
 title="theme by additionalhopes"><span class="lnr
 lnr-code"></span>A.</a></div>
-<div id="sidebar">
+<div id="header">
 <div class="blogtitle">I:\>ipconfig /{Name}
 <br>
 cd /e/study/{Title}
@@ -332,8 +333,8 @@ cd /e/study/{Title}
 <div class="description">
 {Description}
 
-<p>Confectura Industries [Version 9.28.2020]<br>
-(c) 2020 additionalhopes. All right reserved.</p>
+<!--<p>Confectura Industries [Version 9.28.2020]<br>-->
+<!--(c) 2020 additionalhopes. All right reserved.</p>-->
 
 </div>
 {/block:Description}
@@ -344,18 +345,10 @@ cd /e/study/{Title}
 {block:NextPage}<a href="{NextPage}"> »</a>{/block:NextPage}
 </div>
 
-</div> <!--sidebar-->
-<div id="menu">
-<div class="menu">
-<a href="/">Refresh</a>
-<a href="/ask">Askbox</a>
-<a href="{text:Link1URL}">{text:Link1Title}</a>
-<a href="{text:Link2URL}">{text:Link2Title}</a>
-<a href="{text:Link3URL}">{text:Link3Title}</a>
-<a href="/archive">Archive</a>
+</div> <!--header-->
 
-</div> <!--menu-->
 
+<!-- container -->
 <div class="container">
 <div class="postbox">
 {block:Posts}
@@ -502,8 +495,21 @@ href="{Permalink}">{TimeAgo}</a>{/block:Date}
 </div>
 </div>
 {/block:Posts}
-</div> <!--postbox-->
-</div><!--container-->
+</div> <!--end postbox-->
+</div><!--end container-->
+
+<!--footer-->
+<div id="footer">
+<div class="footer">
+<a href="/">Refresh</a>
+<a href="/ask">Askbox</a>
+<a href="{text:Link1URL}">{text:Link1Title}</a>
+<a href="{text:Link2URL}">{text:Link2Title}</a>
+<a href="{text:Link3URL}">{text:Link3Title}</a>
+<a href="/archive">Archive</a>
+
+</div> <!--end footer-->
+
 </div>
 
 </div>
