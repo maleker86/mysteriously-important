@@ -1,257 +1,513 @@
-<html>
-    <head>
-        <title>{Title}</title>
-        <link rel="shortcut icon" href="{Favicon}">
-        <link rel="alternate" type="application/rss+xml" href="{RSS}">
-        {block:Description}
-            <meta name="description" content="{MetaDescription}" />
-        {/block:Description}
-    </head>
-    <body>
-        <h1>{Title}</h1>
+<!----------------------------------------
+*// CONFICTURA INDUSTRIES THEME... //*
+Confictura Industries [Version 9.28.2020]
+(c) 2020 Additionalhopes. All right reserved.
 
-        {block:Description}
-            <p id="description">{Description}</p>
-        {/block:Description}
+──██████████████████──
+──████▀ ▀████──
+──███=─▄▀█──█▀▄─=███──
+──███▌──────────▐███──
+──███▌▀▄──▄▄──▄▀▐███──
+──████──▀▀──▀▀──████──
+──█████▄──────▄█████──
+──████████▄▄████████──
+-----ßūťċĦəɍɚɗ Ъў ĶƦɪ
+----
+--/AKA Butchered by KRIS/--
+------@additionalhopes-----
+BELOW ARE LINKS TO SOME REALLY COOL PEOPLE:
+1. AMAZING PAGINATION HELP: @themesbyeris //
+https://themesbyeris.tumblr.com/tutorial08
+2. COOL GREEN HEX CODE: Journeyman Geek //
 
-        <div id="posts">
-        {block:Posts}
+https://superuser.com/questions/361297/what-colour-is-the-dark-green-
+on-old-fashioned-green-screen-computer-displays
 
-            <!--NPF & Legacy Text Posts-->
-            {block:Text}
-                <div class="post text">
-                    {block:Title}
-                        <h3><a href="{Permalink}">{Title}</a></h3>
-                    {/block:Title}
-                    <!--Original Post-->
-                    {block:NotReblog}
-                        {Body}
-                    {/block:NotReblog}
-                    <!--Post is a reblog-->
-                    {block:RebloggedFrom}
-                        <div class="reblog-list">
-                            {block:Reblogs}
-                                <div class="reblog-header">
-                                    {block:IsActive}
-                                        <a href="{Permalink}">{Username}</a>
-                                    {/block:IsActive}
-                                    {block:IsDeactivated}
-                                        <span>{Username}</span>
-                                    {/block:IsDeactivated}
-                                </div>
-                                <div class="reblog-body">{Body}</div>
-                            {/block:Reblogs}
-                        </div>
-                    {/block:RebloggedFrom}
-                </div>
-            {/block:Text}
+3. THEMEMAKER’S CHECKLIST: Egg //
+https://egg.design/post/630265876628783104/common-theme-mistakes
+4. BASE FOR ABOVE TEXT ART:
+https://www.messletters.com/en/text-art/
 
-            <!--All Answer posts including NPF-->
-            {block:Answer}
-                <div class="post answer">
-                    <p><strong>{Asker}</strong> asked:</p>
-                    {Question}
-                    {block:Answerer}
-                        {Answer}
-                    {/block:Answerer}
-                    <!--Original Post-->
-                    {block:NotReblog}
-                        {Replies}
-                    {/block:NotReblog}
-                    <!--Post is a reblog-->
-                    {block:RebloggedFrom}
-                        <div class="reblog-list">
-                            {block:Reblogs}
-                                <div class="reblog-header">
-                                    {block:IsActive}
-                                        <a href="{Permalink}">{Username}</a>
-                                    {/block:IsActive}
-                                    {block:IsDeactivated}
-                                        <span>{Username}</span>
-                                    {/block:IsDeactivated}
-                                </div>
-                                <div class="reblog-body">{Body}</div>
-                            {/block:Reblogs}
-                        </div>
-                    {/block:RebloggedFrom}
-                </div>
-            {/block:Answer}
+---------------------------------------->
+<!DOCTYPE html>
+<head>
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml"
 
-            <!--Legacy Photo Posts-->
-            {block:Photo}
-                <div class="post photo">
-                    <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-                    <!--Original Post-->
-                    {block:NotReblog}
-                        {Caption}
-                    {/block:NotReblog}
-                    <!--Post is a reblog-->
-                    {block:RebloggedFrom}
-                        <div class="reblog-list">
-                            {block:Reblogs}
-                                <div class="reblog-header">
-                                    {block:IsActive}
-                                        <a href="{Permalink}">{Username}</a>
-                                    {/block:IsActive}
-                                    {block:IsDeactivated}
-                                        <span>{Username}</span>
-                                    {/block:IsDeactivated}
-                                </div>
-                                <div class="reblog-body">{Body}</div>
-                            {/block:Reblogs}
-                        </div>
-                    {/block:RebloggedFrom}
-                </div>
-            {/block:Photo}
+href="{RSS}">
 
-            <!--Legacy Photoset Posts-->
-            {block:Photoset}
-                <div class="post photoset">
-                    {Photoset}
-                    <!--Original Post-->
-                    {block:NotReblog}
-                        {Caption}
-                    {/block:NotReblog}
-                    <!--Post is a reblog-->
-                    {block:RebloggedFrom}
-                        <div class="reblog-header">
-                            {block:Reblogs}
-                                <div class="reblog-header">
-                                    {block:IsActive}
-                                        <a href="{Permalink}">{Username}</a>
-                                    {/block:IsActive}
-                                    {block:IsDeactivated}
-                                        <span>{Username}</span>
-                                    {/block:IsDeactivated}
-                                </div>
-                                <div class="reblog-body">{Body}</div>
-                            {/block:Reblogs}
-                        </div>
-                    {/block:RebloggedFrom}
-                </div>
-            {/block:Photoset}
+{block:Description}
+<meta name="description" content="{MetaDescription}" />
+{/block:Description}
+</head>
+<link
+href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap"
+rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+rel="stylesheet">
+<!-- <meta name="image:Background" content=""/> -->
+<meta name="image:Post Header"
+content="https://static.tumblr.com/s6sxlad/Z3Gqhfhyl/fsocmask_4.png"/
+>
+<meta name="color:Post Header" content="#eee"/>
+<meta name="color:Accent" content="#00ff33"/>
+<meta name="color:Background" content="#000"/>
+<meta name="text:Link1Title" content="Title 1"/>
+<meta name="text:Link1URL" content="/"/>
+<meta name="text:Link2Title" content="Title 2"/>
+<meta name="text:Link2URL" content="/"/>
+<meta name="text:Link3Title" content="Title 3"/>
+<meta name="text:Link3URL" content="/"/>
+<style type="text/css">
+::-webkit-scrollbar {
+width:12px;
+background-color:{color:Background};
+}
 
-            <!--Legacy Quote Posts-->
-            {block:Quote}
-                <div class="post quote">
-                    "{Quote}"
-                    {block:Source}
-                        <div class="source">{Source}</div>
-                    {/block:Source}
-                </div>
-            {/block:Quote}
+::-webkit-scrollbar-thumb {
+border:solid 3px {color:Background};
+background-color:{color:Accent};
+}
+body {
+background-color:{color:Background};
+color:{color:Accent};
+position:absolute;
 
-            <!--Legacy Link Posts-->
-            {block:Link}
-                <div class="post link">
-                    <a href="{URL}" class="link" {Target}>{Name}</a>
-                    <!--Original Post-->
-                    {block:NotReblog}
-                        {Description}
-                    {/block:NotReblog}
-                    <!--Post is a reblog-->
-                    {block:RebloggedFrom}
-                        <div class="reblog-list">
-                            {block:Reblogs}
-                            <div class="reblog-header">
-                                {block:IsActive}
-                                    <a href="{Permalink}">{Username}</a>
-                                {/block:IsActive}
-                                {block:IsDeactivated}
-                                    <span>{Username}</span>
-                                {/block:IsDeactivated}
-                            </div>
-                            <div class="reblog-body">{Body}</div>
-                            {/block:Reblogs}
-                        </div>
-                    {/block:RebloggedFrom}
-                </div>
-            {/block:Link}
+/*--
+background-image: url('{image:Background}');
+background-repeat: no-repeat;
+background-size: center;
+background-attachment: fixed;
+--*/
+font-family: 'VT323', monospace;
+font-size:1rem;
+margin:0px 0px 0px 0px;
+overflow-x:hidden;
+}
+a {
+color:{color:Accent};
+text-decoration:none;
+border-bottom:dotted {color:Accent};
+padding-bottom:3px;
+}
+a:hover {
+color:{color:Background};
+background-color:{color:Accent};
+transition: all 0.5s ease;
+}
+b, bold, strong {
+text-transform:uppercase;
+color:{color:Background};
+background:{color:Accent};
+}
 
-            <!--Legacy Chat Posts-->
-            {block:Chat}
-                <div class="post chat">
-                    {block:Title}
-                        <h3><a href="{Permalink}">{Title}</a></h3>
-                    {/block:Title}
+h2 {
+font-size:1.5rem;
+margin:5px 0px 0px 0px;
+font-weight:500;
+}
+h3 {
+font-size:2rem;
+color:{color:Post Header};
+text-align:center;
+text-shadow:-2px -1px 1px {color:Accent},
+3px 1px 1px {color:Background};
 
-                    <ul class="chat">
-                        {block:Lines}
-                            <li class="{Alt} user_{UserNumber}">
-                                {block:Label}
-                                    <span class="label">{Label}</span>
-                                {/block:Label}{Line}
-                            </li>
-                        {/block:Lines}
-                    </ul>
-                </div>
-            {/block:Chat}
+font-weight:500;
+width:100%;
+background-position:top;
+background-attachment:fixed;
+background-size:auto repeat;
+background-image: url("{image:Post Header}");
+margin:0px;
+padding-top:10px;
+padding-bottom:10px;
+}
+#sidebar {
+border-right:1px solid {color:Accent};
+border-bottom:{color:Accent} 1px solid;
+position:fixed;
+display:inline block;
+width:30vw;
+margin:0;
+height:70vh;
+text-align:center;
+z-index:2;
+overflow-y:auto;
+}
+#sidebar p {
+padding:0px 2px 0px 2px;
+}
+.blogtitle {
+color:{color:Accent};
+margin-top:10px;
+padding:5px;
+font-size:20px;
+font-weight:500;
+}
+.icon {
+padding:5px;
+display:block;
+}
+.description {
+text-align:center;
+padding:5px;
+overflow-y:auto;
 
-            <!--Legacy Video Posts-->
-            {block:Video}
-                <div class="post video">
-                    {Video-700}
-                    <!--Original Post-->
-                    {block:NotReblog}
-                        {Description}
-                    {/block:NotReblog}
-                    <!--Post is a reblog-->
-                    {block:RebloggedFrom}
-                        <div class="reblog-list">
-                            {block:Reblogs}
-                                <div class="reblog-header">
-                                    {block:IsActive}
-                                        <a href="{Permalink}">{Username}</a>
-                                    {/block:IsActive}
-                                    {block:IsDeactivated}
-                                        span>{Username}</span>
-                                    {/block:IsDeactivated}
-                                </div>
-                                <div class="reblog-body">{Body}</div>
-                            {/block:Reblogs}
-                        </div>
-                    {/block:RebloggedFrom}
-                </div>
-            {/block:Video}
+overflow-x:hidden;
+max-height:38vh;
+display:block;
+margin-bottom:20px;
+}
+.description ol, ul {
+text-align:left;
+padding-left:25%;
+}
 
-            <!--Legacy Audio Posts-->
-            {block:Audio}
-                <div class="post audio">
-                    {AudioEmbed}
-                    <!--Original Post-->
-                    {block:NotReblog}
-                        {Description}
-                    {/block:NotReblog}
-                    <!--Post is a reblog-->
-                    {block:RebloggedFrom}
-                        <div class="reblog-list">
-                            {block:Reblogs}
-                                <div class="reblog-header">
-                                    {block:IsActive}
-                                        <a href="{Permalink}">{Username}</a>
-                                    {/block:IsActive}
-                                    {block:IsDeactivated}
-                                        <span>{Username}</span>
-                                    {/block:IsDeactivated}
-                                </div>
-                                <div class="reblog-body">{Body}</div>
-                            {/block:Reblogs}
-                        </div>
-                    {/block:RebloggedFrom}
-                </div>
-            {/block:Audio}
+#sidebar .pagination {
+position:absolute;
+bottom:0px;
+left:45%;
+height:20px;
+padding: 3px 0;
+color:{color:Accent};
+}
+#sidebar .pagination a {
+color: {color:Accent};
+text-decoration: none;
+}
+#sidebar .pagination a:hover {
+color: {color:Background};
+}
+#menu {
+position:fixed;
+width:30vw;
+margin-left:0px;
+bottom:0;
+margin-top:70vh;
+height:30vh;
+z-index:1;
+overflow-y:auto;
+border-right:1px solid {color:Accent};
+}
+.menu a {
+margin:5px;
+text-transform:uppercase;
 
-        {/block:Posts}
-        </div>
+letter-spacing:1px;
+text-align:center;
+padding:2px;
+display:block;
+}
+.menu a:hover {
+background-color:{color:Accent};
+color:{color:Background};
+}
 
-        <div id="footer">
-            {block:PreviousPage}
-                <a href="{PreviousPage}">&larr; Previous</a>
-            {/block:PreviousPage}{block:NextPage}
-                <a href="{NextPage}">Next &rarr;</a>
-            {/block:NextPage}
+.container {
+top:0;
+position: fixed;
+margin-top:8vh;
+margin-left:30vw;
+width:650px;
+overflow-y:scroll;
+overflow-x:hidden;
+padding: 0;
+height:90vh;
+}
 
-            <a href="/archive">Archive</a>
-        </div>
-    </body>
+.postbox {
+position: relative;
+margin:0px 0px 0px 125px;
+width: 425px;
+padding: 0;
+background:transparent;
+}
+
+.post {
+padding:10px;
+width:400px;
+margin-bottom:50px;
+}
+.post img {
+max-width:400px;
+height:auto;
+}
+
+.post video {
+max-width:400px;
+height:auto;
+}
+
+.tags {
+margin-top:10px;
+color:{color:Accent};
+}
+.tags a {
+color:{color:Accent};
+text-align:left;
+word-break: normal;
+transition: all 0.5s ease;
+margin-left:5px;
+border:none;
+}
+.tags a:hover {
+color:{color:Background};
+}
+.notes {
+color:{color:Accent};
+display:inline;
+{block:Permalink}
+text-align:left;
+line-height:100%;
+{/block:Permalink}
+}
+.notes ol, ul {
+margin-left:15px;
+}
+
+.notes .note img.avatar {
+vertical-align: -4px;
+padding-right: 10px;
+width: 16px;
+height: 16px;
+display:none;
+}
+
+.note {
+margin-left:20px;
+margin-top:10px;
+padding:2px 0px 0px 0px;
+}
+blockquote {
+border-left:solid 1px {color:Accent};
+padding-left:15px;
+margin-left:10px;
+}
+#info {
+border-top: solid 1px {color:Accent};
+padding-top:10px;
+}
+/*---CREDIT hey! don't touch you nerd!---*/
+#credit {
+z-index:9999999999;
+padding:4px;
+padding-bottom:10px;
+position:fixed;
+right:20px;
+bottom:20px;
+background:#36393f;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+#credit a {
+font-size:14px;
+text-transform:uppercase;
+width:20px;
+text-align:center;
+color:{color:Accent};
+text-decoration:none;
+}
+
+</style>
+<body>
+
+<div id="credit"><a href="https://additionalhopes.tumblr.com"
+title="theme by additionalhopes"><span class="lnr
+lnr-code"></span>A.</a></div>
+<div id="sidebar">
+<div class="blogtitle">I:\>ipconfig /{Name}
+<br>
+cd /e/study/{Title}
+</div>
+<div class="icon">
+
+<img src="{PortraitURL-40}"/>
+
+</div>
+{block:Description}
+<div class="description">
+{Description}
+
+<p>Confectura Industries [Version 9.28.2020]<br>
+(c) 2020 additionalhopes. All right reserved.</p>
+
+</div>
+{/block:Description}
+<div class="pagination">
+{block:PreviousPage}<a href="{PreviousPage}">«
+</a>{/block:PreviousPage}
+{CurrentPage} / {TotalPages}
+{block:NextPage}<a href="{NextPage}"> »</a>{/block:NextPage}
+</div>
+
+</div> <!--sidebar-->
+<div id="menu">
+<div class="menu">
+<a href="/">Refresh</a>
+<a href="/ask">Askbox</a>
+<a href="{text:Link1URL}">{text:Link1Title}</a>
+<a href="{text:Link2URL}">{text:Link2Title}</a>
+<a href="{text:Link3URL}">{text:Link3Title}</a>
+<a href="/archive">Archive</a>
+
+</div> <!--menu-->
+
+<div class="container">
+<div class="postbox">
+{block:Posts}
+<div class="post">
+
+{block:Text}
+<div class="text">
+{block:Title}
+<h3>{Title}</h3>
+{/block:Title}{Body}
+</div>
+{/block:Text}
+
+{block:Photo}
+<div class="photo">
+<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+</div>
+{/block:Photo}
+
+{block:Panorama}
+<div class="panorama">
+{LinkOpenTag}
+<img src="{PhotoURL-Panorama}"
+
+alt="{PhotoAlt}"/>
+
+{LinkCloseTag}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+</div>
+{/block:Panorama}
+
+{block:Photoset}
+<div class="photoset">
+{Photoset-400}{block:Caption}
+
+<div class="caption">{Caption}</div>
+{/block:Caption}
+</div>
+{/block:Photoset}
+
+{block:Quote}
+<div class="quote">
+"{Quote}"
+{block:Source}
+<div class="source post">{Source}</div>
+{/block:Source}
+</div>
+{/block:Quote}
+
+{block:Link}
+<div class="link">
+<a href="{URL}" class="link"
+
+{Target}>{Name}</a>
+
+{block:Description}
+<div
+class="description">{Description}</div>
+{/block:Description}
+</div>
+{/block:Link}
+
+{block:Chat}
+<div class="chat">
+{block:Title}
+<h3>{Title}</h3>
+{/block:Title}
+<ul class="chat">
+{block:Lines}
+<div class="{Alt} user_{UserNumber}">
+{block:Label}
+<span
+
+class="label">{Label}</span>
+
+{/block:Label}{Line}
+
+</div>
+{/block:Lines}
+</ul>
+</div>
+{/block:Chat}
+
+{block:Video}
+<div class="video">
+{Video-400}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+</div>
+{/block:Video}
+
+{block:Audio}
+<div class="audio">
+{AudioEmbed-400}{block:Caption}
+<div class="caption">{Caption}</div>
+{/block:Caption}
+</div>
+{/block:Audio}
+
+{block:Answer}
+<table style="border-bottom:1px solid
+
+#a0a0a0;padding-bottom:5px;margin-bottom:5px;">
+
+<tr>
+<td
+
+style="vertical-align:top;padding-right:10px;"><img
+src="{AskerPortraitURL-64}"></td>
+<td
+
+style="vertical-align:top;"><strong>{Asker} asked:</strong>
+{Question}</td>
+
+</tr>
+</table>
+{Answer}
+{/block:Answer}
+<div id="info">
+
+<div class="notes">
+{block:Date}<a
+
+href="{Permalink}">{TimeAgo}</a>{/block:Date}
+
+{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}
+</div>
+{block:PermalinkPage}
+{PostNotes}
+{/block:PermalinkPage}
+
+{block:HasTags}
+
+<div class="tags"> #{block:Tags}
+<a href="{TagURL}">{Tag}</a>
+{/block:Tags}
+</div>
+{/block:HasTags}
+
+</div>
+</div>
+{/block:Posts}
+</div> <!--postbox-->
+</div><!--container-->
+</div>
+
+</div>
+</div>
+
+</body>
 </html>
