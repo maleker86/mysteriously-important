@@ -4,14 +4,28 @@
     <link
       rel="stylesheet"
       href="https://www.w3schools.com/w3css/5/w3.css" />
+<!--Tumblr banned JS and made it increasingly difficult and horrible to write or test JS on their site, so I had to use images over and over. This site is hostile to creators and should devour feculance <3-->
+
+    <!--<meta name="font:Title" content="Brutal Type"/>-->
+    <!--<meta name="font:Body" content="Sofia Pro"/>-->
+    <!--<meta name="color:Masthead text and links" content="{TitleColor}"/>-->
+    <!--<meta name="color:Body text" content="#fff"/>-->
+    <!--<meta name="image:Background" content=""/>-->
 
     <style>
+    
+    :root {
+      /*--randomNumber: random(5);*/
+      --accentColor: #73cdee;
+      /*--accentColor: #fff;*/
+    }
+    
       body {
           font-family: VT323, monospace;
           font-weight: 500;
           font-size: .9em;
           background-color: #003b64;
-          color: #73cdee;
+          color: var(--accentColor);
       }
 
       #container {
@@ -30,22 +44,22 @@
           justify-content: center;
           /*border: 2px solid green;*/
           padding: 2vh;
-          border-bottom: 6px double #73cdee;
+          border-bottom: 6px double var(--accentColor);
       }
 
       #topbar {
           display: flex;
           flex-direction: row;
           align-items: center;
-          font-weight: 800;
-          font-size: 1.25em;
+          font-weight: bold;
+          font-size: 1.2em;
           padding 5vh;
-          border: 2px solid #73cdee;
+          border: 2px solid var(--accentColor);
       }
 
       #topbar > div {
           padding: 1vw;
-          /*border: 2px solid blue;*/
+          border: 2px solid blue;
       }
 
       #location {
@@ -53,12 +67,12 @@
       }
 
       #completed {
-          flex-grow: 5;
-          font-size: 1.1em;
-          font-weight: 900;
+          flex-grow: 4;
+          font-size: 1em;
+          font-weight: bold;
           text-align: right;
           color: #003b64;
-          -webkit-text-stroke: 1.5px #73cdee;
+          -webkit-text-stroke: .1em var(--accentColor);
       }
 
 
@@ -66,31 +80,110 @@
           flex-grow: 1;
           color: #fff;
           text-align: center;
+          /*background-image: url("https://cdn.pixabay.com/photo/2013/07/12/13/43/earth-147171_960_720.png");*/
+  /*background-repeat: no-repeat;*/
       }
 
+
       #footer {
-          
-          border-top: 6px double #73cdee;
+          border-top: 6px double var(--accentColor);
           background-color: gray;
       }
 
       #folders {
-          
-          background-color:lightgreen;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
       }
 
-      #folders div {
-      }
 
         .folder {
           padding: 10px;
-          border: 1px solid yellow;
-            background-color:pink;
+          margin: 2vw;
+          /*border: 1px solid yellow;*/
+        }
+        
+        .folder > div {
+            border: 1px solid yellow;
+            margin: 1vw 0 1vw 0;
+        }
+        
+        .folder a {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 2px;
+            text-decoration: none;
         }
 
       .progress {
-          /*border: 1px solid white;*/
+          /*width: 100%;*/
+          position:relative;
+          min-width:1;
+          border:none;
       }
+      
     </style>
   </head>
   <body>
+    <div id="container">
+      <div id="header">
+        <div id="topbar">
+          <div id="location">{Title}</div>
+          <div id="completed">{Percentage}% Complete</div>
+          <div id="logo">
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/13/43/erth-147171_960_720.png" style="float:right;position:absolute;right:3vw;top:calc(1vh - 100px);width:14vw;height:10vh;repeat:no-repeat;z-index:-1;filter: drop-shadow(0px 100px 0 cyan);"/>
+            <span style="z-index:0">{icon}</span>
+                
+            </div>
+        </div>
+      </div>
+
+      <div id="main">
+        <div class="test">words here
+            var(--randomNumber)
+        </div>
+          
+      </div>
+
+      <div id="footer">
+        <div id="folders">
+          <div class="folder">
+            <div>
+                <a href="/">O1</a>
+            </div>
+            <div class="progress bar">
+                <div class="progress w3-container w3-cyan" style="height: 24px; width: 90%"> 90% 
+                </div>
+            </div>
+          </div>
+          
+          <div class="folder">
+            <div><a href="/">O2</a></div>
+            <div class="progress bar">
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 25%"> 25% </div></div>
+          </div>
+          
+          <div class="folder">
+            <div><a href="/">O3</a></div>
+            <div class="progress bar">
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 5%"> 5% </div></div>
+          </div>
+          
+          <div class="folder">
+            <div><a href="/">O4</a></div>
+            <div class="progress bar">
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 55%"> 55% </div></div>
+          </div>
+          
+          <div class="folder">
+            <div><a href="/">O5</a></div>
+            <div class="progress bar">
+            <div class="progress w3-container w3-cyan" style="height: 24px; width: 75%"> 75% </div></div>
+          </div>
+      </div>
+    </div>
+    
+
+    
+  </body>
+</html>
