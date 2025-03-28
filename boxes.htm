@@ -15,16 +15,17 @@
     <style>
     
     :root {
-      /*--randomNumber: random(5);*/
+      /*--randomNumber: random(1,5);*/
       --accentColor: #73cdee;
+      --backgroundColor: #003b64;
       /*--accentColor: #fff;*/
     }
     
       body {
-          font-family: VT323, monospace;
+          font-family: Consolas, monospace;
           font-weight: 500;
           font-size: .9em;
-          background-color: #003b64;
+          background-color: var(--backgroundColor);
           color: var(--accentColor);
       }
 
@@ -52,14 +53,14 @@
           flex-direction: row;
           align-items: center;
           font-weight: bold;
-          font-size: 1.2em;
+          font-size: 1.5em;
           padding 5vh;
           border: 2px solid var(--accentColor);
       }
 
       #topbar > div {
           padding: 1vw;
-          border: 2px solid blue;
+          /*border: 2px solid blue;*/
       }
 
       #location {
@@ -68,11 +69,11 @@
 
       #completed {
           flex-grow: 4;
-          font-size: 1em;
+          /*font-size: 1em;*/
           font-weight: bold;
           text-align: right;
-          color: #003b64;
-          -webkit-text-stroke: .1em var(--accentColor);
+          color: var(--backgroundColor);
+          -webkit-text-stroke: .08em var(--accentColor);
       }
 
 
@@ -84,10 +85,28 @@
   /*background-repeat: no-repeat;*/
       }
 
+    /*.test {*/
+    /*    visibility:hidden;*/
+    /*    position:relative;*/
+    /*}*/
+
+    /*.test::after {*/
+    /*    visibility:visible;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    position:absolute;*/
+    /*    content: var(--randomNumber);*/
+    /*}*/
+    
+    #main {
+        background-color:green;
+        background-image: url("https://64.media.tumblr.com/21563bbe12b76ae5b7878f6e6be4d929/67f6c41e8587ff13-d1/s75x75_c1/edd884495ffcb93c096335e76d1d24753f44d828.gif");
+        background-size:10vw;
+    }
+
 
       #footer {
           border-top: 6px double var(--accentColor);
-          background-color: gray;
       }
 
       #folders {
@@ -103,7 +122,7 @@
         }
         
         .folder > div {
-            border: 1px solid yellow;
+            border: 2px solid var(--accentColor);
             margin: 1vw 0 1vw 0;
         }
         
@@ -139,10 +158,9 @@
       </div>
 
       <div id="main">
-        <div class="test">words here
-            var(--randomNumber)
-        </div>
-          
+       
+       
+       
       </div>
 
       <div id="footer">
