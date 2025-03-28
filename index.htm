@@ -123,16 +123,16 @@ h3 {
     padding-bottom:10px;
 }
 
-  #container {
-      display: grid;
-          grid-template-rows: 1fr 6fr 1fr;
-      border: 2px solid black;
-      height:100vh;
-  }
+#container {
+  display: grid;
+      grid-template-rows: 1fr 6fr 1fr;
+  border: 2px solid black;
+  height:100vh;
+}
 
-  #container > div {
-      /*border: 1px solid red;*/
-  }
+#container > div {
+  /*border: 1px solid red;*/
+}
 
 #header {
   align-items: center;
@@ -448,87 +448,83 @@ lnr-code"></span>B.</a></div>
 {block:Posts}
 <div class="post">
 
-{block:Text}
-<div class="text">
-{block:Title}
-<h3>{Title}</h3>
-{/block:Title}{Body}
-</div>
-{/block:Text}
+    {block:Text}
+    <div class="text">
+    {block:Title}
+        <h3>{Title}</h3>
+    {/block:Title}
+        {Body}
+    </div>
+    {/block:Text}
 
-{block:Photo}
-<div class="photo">
-<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
-{block:Caption}
-<div class="caption">{Caption}</div>
-{/block:Caption}
-</div>
-{/block:Photo}
+    {block:Photo}
+        <div class="photo">
+        <img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+        {block:Caption}
+            <div class="caption">{Caption}</div>
+        {/block:Caption}
+        </div>
+    {/block:Photo}
 
-{block:Panorama}
-<div class="panorama">
-{LinkOpenTag}
-<img src="{PhotoURL-Panorama}"
+    {block:Panorama}
+        <div class="panorama">
+            {LinkOpenTag}
+                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+            {LinkCloseTag}
+            {block:Caption}
+                <div class="caption">{Caption}</div>
+            {/block:Caption}
+        </div>
+    {/block:Panorama}
 
-alt="{PhotoAlt}"/>
+    {block:Photoset}
+        <div class="photoset">
+            {Photoset-400}
+        {block:Caption}
+            <div class="caption">{Caption}</div>
+        {/block:Caption}
+        </div>
+    {/block:Photoset}
 
-{LinkCloseTag}{block:Caption}
-<div class="caption">{Caption}</div>
-{/block:Caption}
-</div>
-{/block:Panorama}
+    {block:Quote}
+        <div class="quote">
+            "{Quote}"
+            {block:Source}
+                <div class="source post">{Source}</div>
+            {/block:Source}
+        </div>
+    {/block:Quote}
 
-{block:Photoset}
-<div class="photoset">
-{Photoset-400}{block:Caption}
+    {block:Link}
+        <div class="link">
+        
+        <a href="{URL}" class="link" {Target}>{Name}</a>
+        
+        {block:Description}
+            <div class="description">
+                {Description}
+            </div>
+        {/block:Description}
+        </div>
+    {/block:Link}
 
-<div class="caption">{Caption}</div>
-{/block:Caption}
-</div>
-{/block:Photoset}
-
-{block:Quote}
-<div class="quote">
-"{Quote}"
-{block:Source}
-<div class="source post">{Source}</div>
-{/block:Source}
-</div>
-{/block:Quote}
-
-{block:Link}
-<div class="link">
-<a href="{URL}" class="link"
-
-{Target}>{Name}</a>
-
-{block:Description}
-<div
-class="description">{Description}</div>
-{/block:Description}
-</div>
-{/block:Link}
-
-{block:Chat}
-<div class="chat">
-{block:Title}
-<h3>{Title}</h3>
-{/block:Title}
-<ul class="chat">
-{block:Lines}
-<div class="{Alt} user_{UserNumber}">
-{block:Label}
-<span
-
-class="label">{Label}</span>
-
-{/block:Label}{Line}
-
-</div>
-{/block:Lines}
-</ul>
-</div>
-{/block:Chat}
+    {block:Chat}
+        <div class="chat">
+            {block:Title}
+                <h3>{Title}</h3>
+            {/block:Title}
+            <ul class="chat">
+                {block:Lines}
+                    <div class="{Alt} user_{UserNumber}">
+                        {block:Label}
+                            <span class="label">{Label}</span>
+                        {/block:Label}
+                        {Line}
+                    </div>
+                {/block:Lines}
+            </ul>
+        </div>
+    {/block:Chat}
 
 {block:Video}
 <div class="video">
@@ -589,8 +585,8 @@ href="{Permalink}">{TimeAgo}</a>{/block:Date}
 </div>
 </div>
 {/block:Posts}
+    
 </div>
-
 </div><!--end main-->
 
 <!--footer-->
@@ -656,23 +652,17 @@ href="{Permalink}">{TimeAgo}</a>{/block:Date}
       </div>
     </div>
   </div>
-</div>
-
-
-
-<div id="footer">
-<div class="footer">
-<a href="/archive">Archive</a>
+  
+ <a href="/archive">Archive</a>
 <p><div class="pagination">
 {block:PreviousPage}<a href="{PreviousPage}">«
 </a>{/block:PreviousPage}
 {CurrentPage} / {TotalPages}
 {block:NextPage}<a href="{NextPage}"> »</a>{/block:NextPage}
 </div></p>
-
-</div> <!--end footer-->
-
+  
 </div>
+
 
 </div>
 </div>
