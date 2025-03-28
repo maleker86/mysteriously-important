@@ -52,8 +52,9 @@ rel="stylesheet">
 content="https://static.tumblr.com/s6sxlad/Z3Gqhfhyl/fsocmask_4.png"/
 >
 <meta name="color:Post Header" content="#eee"/>
-<meta name="color:Accent" content="##68dbff"/>
-<meta name="color:Background" content="#000"/>
+<meta name="color:Accent" content="#73cdee"/>
+<meta name="color:Background" content="#003b64"/>
+<meta name="text:Percentage" content="78"/>
 <meta name="text:Link1Title" content="Title 1"/>
 <meta name="text:Link1URL" content="/"/>
 <meta name="text:Link2Title" content="Title 2"/>
@@ -77,30 +78,20 @@ background-color:{color:Accent};
 }
 
 body {
-    display: grid;
-    grid-template-areas:
-        "header header"
-        "main main"
-        "footer footer";
-    /*grid-template-rows: 10vh 80vh 10vh;*/
-    grid-template-rows: auto 8fr auto;
-    
-    height: calc(100vh - 40px);
-    
-    margin-top: 40px;
-    
-    background-color:{color:Background};
-    color:{color:Accent};
-    
-    font-family: 'VT323', monospace;
-    font-size:1rem;
+      /*font-family: 'VT323', sans-serif, monospace;*/
+      font-family: sans-serif, monospace;
+      font-weight: 500;
+      font-size: 1em;
+      background-color: {color:Background};
+      color: {color:Accent};
 }
 
 a {
     color:{color:Accent};
     text-decoration:none;
     border-bottom:dotted {color:Accent};
-    padding-bottom:3px;
+    /*padding-bottom:3px;*/
+    padding: 0 5px 3px 5px;
 }
 a:hover {
     color:{color:Background};
@@ -132,17 +123,42 @@ h3 {
     padding-bottom:10px;
 }
 
+  #container {
+      display: grid;
+          grid-template-rows: 1fr 6fr 1fr;
+      border: 2px solid black;
+      height:100vh;
+  }
+
+  #container > div {
+      /*border: 1px solid red;*/
+  }
+
 #header {
-    grid-area: header;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    border:1px solid {color:Accent};
-    text-align:center;
+  align-items: center;
+  justify-content: center;
+  /*border: 2px solid green;*/
+  padding: 2vh;
+  border-bottom: 6px double {color:Accent};
 }
-#header p {
-    /*padding:0px 2px 0px 2px;*/
+
+#topbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding 5vh;
+  border: 2px solid {color:Accent};
+}
+
+#topbar > div {
+  padding: 1vw;
+  /*border: 2px solid blue;*/
+}
+
+#location {
+  flex-grow: 1;
 }
 
 .blogtitle {
@@ -151,9 +167,20 @@ h3 {
     font-weight:500;
 }
 
+#completed {
+  flex-grow: 4;
+  /*font-size: 1em;*/
+  font-weight: bold;
+  text-align: right;
+  color: var(--backgroundColor);
+  -webkit-text-stroke: .08em {color:Accent};
+}
+
+
 #logo {
-    display: inline-block;
-    margin-right: 0px;
+  flex-grow: 1;
+  color: #fff;
+  text-align: center;
 }
 
 .logo-container {
@@ -228,25 +255,30 @@ text-decoration: none;
 color: {color:Background};
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     
-    
+#main {
+    background-color:green;
+    background-image: url("https://64.media.tumblr.com/21563bbe12b76ae5b7878f6e6be4d929/67f6c41e8587ff13-d1/s75x75_c1/edd884495ffcb93c096335e76d1d24753f44d828.gif");
+    background-size:10vw;
+    padding: 40px;
     overflow-y:scroll;
     overflow-x:hidden;
-    
-    border: 2px solid blue;
-    grid-area: main;
 }
 
-.post {
-padding:10px;
-width:600px;
-margin:50px 0px 50px 0px;
+/*.container {*/
+/*      display: grid;*/
+/*          grid-template-rows: 1fr 6fr 1fr;*/
+/*      border: 2px solid black;*/
+/*      height:100vh;*/
+/*}*/
 
-border: 2px solid yellow;
+.post {
+    padding:10px;
+    width:600px;
+    margin: auto;
+    margin-bottom: 40px;
+    background-color:{color:Background};
+    /*border: 1px solid {color:Accent};*/
 }
 
 .post img {
@@ -257,6 +289,12 @@ height:auto;
 .post video {
 max-width:400px;
 height:auto;
+}
+
+
+#info {
+    border-top: solid 1px {color:Accent};
+    padding-top:10px;
 }
 
 .tags {
@@ -275,6 +313,7 @@ border:none;
 color:{color:Background};
 }
 .notes {
+    
 color:{color:Accent};
 display:inline;
 {block:Permalink}
@@ -305,97 +344,107 @@ padding-left:15px;
 margin-left:10px;
 }
 
-
-#info {
-border-top: solid 1px {color:Accent};
-padding-top:10px;
-}
-
 #footer {
-    grid-area: footer;
-  display: flex;
-  flex-direction: column;
-    
-    /*width:30vw;*/
-    /*margin-left:0px;*/
-    /*bottom:0;*/
-    /*margin-top:70vh;*/
-    /*height:30vh;*/
-    /*z-index:1;*/
-    /*overflow-y:auto;*/
-    border:1px solid {color:Accent};
+    border-top: 6px double {color:Accent};
 }
 
-#footer * {
-    border: 1px solid cyan;
+#folders {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
-.footer a {
-    /*margin:5px;*/
-    text-transform:uppercase;
-    
-    letter-spacing:1px;
-    /*text-align:center;*/
-    /*padding:2px;*/
-    /*display:inline-block;*/
-}
-.footer a:hover {
-background-color:{color:Accent};
-color:{color:Background};
+
+.folder {
+  padding: 10px;
+  margin: 2vw;
+  /*border: 1px solid yellow;*/
 }
 
-/*---CREDIT hey! don't touch you nerd!---*/
+.folder > div {
+    border: 2px solid {color:Accent};
+    margin: 1vw 0 1vw 0;
+}
+
+.folder a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2px;
+    text-decoration: none;
+}
+
+.progress {
+  /*width: 100%;*/
+  position:relative;
+  min-width:1;
+  border:none;
+}
+
+/*---CREDIT hey! don't touch this you nerd!---*/
 #credit {
-z-index:9999999999;
-padding:4px;
-padding-bottom:10px;
-position:fixed;
-right:20px;
-bottom:20px;
-background:#36393f;
--webkit-border-radius: 4px;
--moz-border-radius: 4px;
-border-radius: 4px;
+    z-index:9999999999;
+    padding:4px;
+    padding-bottom:10px;
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:#36393f;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
+
 #credit a {
-font-size:14px;
-text-transform:uppercase;
-width:20px;
-text-align:center;
-color:{color:Accent};
-text-decoration:none;
+    font-size:14px;
+    text-transform:uppercase;
+    width:20px;
+    text-align:center;
+    color:{color:Accent};
+    text-decoration:none;
 }
 
 </style>
 <body>
 
-<div id="credit"><a href="https://additionalhopes.tumblr.com"
-title="theme by additionalhopes"><span class="lnr
-lnr-code"></span>A.</a></div>
-<div id="header">
-<div class="blogtitle">{Name}: {Title}
-</div>
+<div id="credit"><a href="https://bruisedconscience-reblogs.tumblr.com"
+title="theme by bruisedconscience-reblogs"><span class="lnr
+lnr-code"></span>B.</a></div>
 
-{block:Description}
-<div class="description">
-{Description}
-</div>
-{/block:Description}
+   <div id="container">
+   
+      <div id="header">
+        <div id="topbar">
+        
+          <div id="location" ><a href="/" title="Refresh Page">{Title}</a></div>
 
-    <div id="logo">
-        <div class="logo-container">
-            <div class="icon"><img src="{PortraitURL-40}"/></div>
-                <div class="logo-1"></div>
-                <div class="logo-2"></div>
-                <div class="logo-3"></div>
-            </div>
+<!--{block:Description}-->
+<!--<div class="description">-->
+<!--{Description}-->
+<!--</div>-->
+<!--{/block:Description}-->
+
+        <div id="completed">{text:Percentage}% Complete</div>
+        
+            <div id="logo">
+                <div class="logo-container">
+                    <div class="icon"><img src="{PortraitURL-40}"/></div>
+                        <div class="logo-1"></div>
+                        <div class="logo-2"></div>
+                        <div class="logo-3"></div>
+                    </div>
+                </div>
+
+          <!--<div id="logo">-->
+          <!--  <img src="https://cdn.pixabay.com/photo/2013/07/12/13/43/erth-147171_960_720.png" style="float:right;position:absolute;right:3vw;top:calc(1vh - 100px);width:14vw;height:10vh;repeat:no-repeat;z-index:-1;filter: drop-shadow(0px 100px 0 cyan);"/>-->
+          <!--  <span style="z-index:0">{icon}</span>-->
+                
+          <!--  </div>-->
         </div>
+      </div>
 
-</div> <!--header-->
 
-
-<!-- container -->
-<div class="container">
+      <div id="main">
+      
 {block:Posts}
 <div class="post">
 
@@ -540,16 +589,79 @@ href="{Permalink}">{TimeAgo}</a>{/block:Date}
 </div>
 </div>
 {/block:Posts}
-</div><!--end container-->
+</div>
+
+</div><!--end main-->
 
 <!--footer-->
 <div id="footer">
-<div class="footer">
-<a href="/">Refresh</a>
-<a href="/ask">Askbox</a>
-<a href="{text:Link1URL}">{text:Link1Title}</a>
+  <div id="folders">
+    <div class="folder">
+      <div>
+        <a href="/ask" title="Ask Box">O1</a>
+      </div>
+      <div class="progress bar">
+        <div
+          class="progress w3-container w3-cyan"
+          style="height: 24px; width: 90%">
+          90%
+        </div>
+      </div>
+    </div>
+
+    <div class="folder">
+    
+      <div><a href="{text:Link1URL}" title="{text:Link1Title}">O2</a></div>
+      <div class="progress bar">
+        <div
+          class="progress w3-container w3-cyan"
+          style="height: 24px; width: 25%">
+          25%
+        </div>
+      </div>
+    </div>
+
+    <div class="folder">
+      <div><a href="/">O3</a></div>
+      <div class="progress bar">
+        <div
+          class="progress w3-container w3-cyan"
+          style="height: 24px; width: 5%">
+          5%
+        </div>
+      </div>
+    </div>
+
+    <div class="folder">
+      <div><a href="/">O4</a></div>
 <a href="{text:Link2URL}">{text:Link2Title}</a>
+      <div class="progress bar">
+        <div
+          class="progress w3-container w3-cyan"
+          style="height: 24px; width: 55%">
+          55%
+        </div>
+      </div>
+    </div>
+
+    <div class="folder">
+      <div><a href="/">O5</a></div>
 <a href="{text:Link3URL}">{text:Link3Title}</a>
+      <div class="progress bar">
+        <div
+          class="progress w3-container w3-cyan"
+          style="height: 24px; width: 75%">
+          75%
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="footer">
+<div class="footer">
 <a href="/archive">Archive</a>
 <p><div class="pagination">
 {block:PreviousPage}<a href="{PreviousPage}">«
