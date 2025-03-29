@@ -43,6 +43,12 @@ rel="stylesheet">
 <meta name="image:Post Header"
 content="https://static.tumblr.com/s6sxlad/Z3Gqhfhyl/fsocmask_4.png"/
 >
+
+
+<!-- DEFAULT TOGGLES-->
+    <meta name="if:Department Colors" content="1"/>
+
+<!--CUSTOM COLOR DEFAULTS-->
 <meta name="color:Post Header" content="#eee"/>
 
 <meta name="color:Accent" content="#73cdee"/>
@@ -52,13 +58,20 @@ content="https://static.tumblr.com/s6sxlad/Z3Gqhfhyl/fsocmask_4.png"/
 <meta name="color:Dread" content="#ed8ae7"/>
 <meta name="color:Background" content="#003b64"/>
 
+<!--CUSTOM TEXT DEFAULTS-->
 <meta name="text:Percentage" content="78"/>
+<meta name="text:Progress 1" content="90"/>
+<meta name="text:Progress 2" content="25"/>
+<meta name="text:Progress 3" content="5"/>
+<meta name="text:Progress 4" content="55"/>
+<meta name="text:Progress 5" content="75"/>
 <meta name="text:Link1Title" content="Title 1"/>
 <meta name="text:Link1URL" content="/"/>
 <meta name="text:Link2Title" content="Title 2"/>
 <meta name="text:Link2URL" content="/"/>
 <meta name="text:Link3Title" content="Title 3"/>
 <meta name="text:Link3URL" content="/"/>
+
 <style type="text/css">
 
 ::-webkit-scrollbar {
@@ -83,6 +96,8 @@ background-color:{color:Background};
     margin: 0;
 }
 
+
+
 body {
       /*font-family: 'VT323', sans-serif, monospace;*/
       font-family: sans-serif, monospace;
@@ -93,47 +108,31 @@ body {
 }
 
 a {
-    color:{color:Woe};
+    {block:IfNotDepartmentColors}
+        color:{color:Accent};
+        border-bottom:dotted {color:Accent};
+    {/block:IfNotDepartmentColors}{block:IfDepartmentColors}
+        color:{color:Woe};
+    {/block:IfDepartmentColors}
+
     text-decoration:none;
-    /*border-bottom:dotted {color:Accent};*/
+    
     /*padding-bottom:3px;*/
     padding: 0 3px;
 }
 a:hover {
-    color:{color:Background};
-    background-color:{color:Woe};
+    
+    {block:IfNotDepartmentColors}
+        background-color:{color:Accent};
+        color:{color:Background};
+    {/block:IfNotDepartmentColors}{block:IfDepartmentColors}
+        background-color:{color:Woe};
+        color:{color:Background};
+    {/block:IfDepartmentColors}
+    
     transition: all 0.5s ease;
 }
-b, bold, strong {
-    text-transform:uppercase;
-    color:{color:Background};
-    background:{color:Dread};
-    padding: 0 3px;
-}
 
-i, em, italic {
-    color:{color:Frolic};
-    /*padding: 0 3px;*/
-}
-
-h2 {
-    font-size:1.5rem;
-    margin:5px 0px 0px 0px;
-    font-weight:500;
-}
-h3 {
-    font-size:2rem;
-    color:{color:Post Header};
-    text-align:center;
-    text-shadow:-2px -1px 1px {color:Accent},
-    3px 1px 1px {color:Background};
-    
-    font-weight:500;
-
-    margin:0px;
-    padding-top:10px;
-    padding-bottom:10px;
-}
 
 #container {
   display: grid;
@@ -272,9 +271,9 @@ h3 {
 
     
 #main {
-    background-color:green;
+    /*background-color:green;*/
     background-image: url("https://64.media.tumblr.com/21563bbe12b76ae5b7878f6e6be4d929/67f6c41e8587ff13-d1/s75x75_c1/edd884495ffcb93c096335e76d1d24753f44d828.gif");
-    background-size:10vw;
+    background-size:5vw;
     padding: 40px;
     overflow-y:scroll;
     overflow-x:hidden;
@@ -289,16 +288,18 @@ h3 {
 
 .post {
     text-align:justify;
+    /*line-height: 125%;*/
     padding:10px;
-    width:600px;
+    width:550px;
     margin: auto;
     margin-bottom: 40px;
     background-color:{color:Background};
+    /*background-color:green;*/
     border: 1px solid {color:Accent};
 }
 
     .post img {
-        max-width:400px;
+        /*max-width:400px;*/
         height:auto;
     }
     
@@ -306,10 +307,72 @@ h3 {
         max-width:400px;
         height:auto;
     }
+
+    
+    .post p {
+        /*background-color:yellow;*/
+        /*padding-bottom: 10px;*/
+        /*margin-bottom: 5px;*/
+        text-indent: 1rem;
+    }
+    
+    .post  ul, ol {
+        margin-left: 50px;
+    }
+    
+        
+    h2 {
+        /*background-color:green;*/
+        /*padding-bottom: 10px;*/
+        font-size:1.5rem;
+        /*margin:5px 0px 0px 0px;*/
+        font-weight:500;
+    }
+    
+    h3 {
+        /*background-color:green;*/
+        font-size:2rem;
+        color:{color:Post Header};
+        text-align:center;
+        text-shadow:-2px -1px 1px {color:Accent},
+            3px 1px 1px {color:Background};
+        
+        font-weight:500;
+    
+        margin:0px;
+        padding: 10px 0;
+    }
+    
+    b, bold, strong {
+        text-transform:uppercase;
+        
+        {block:IfNotDepartmentColors}
+            
+            color:{color:Background};
+            background-color:{color:Accent};
+            
+        {/block:IfNotDepartmentColors}{block:IfDepartmentColors}
+            color:{color:Background};
+            background:{color:Dread};
+        {/block:IfDepartmentColors}
+        
+        padding: 0 3px;
+    }
+
+    i, em, italic {
+        {block:IfNotDepartmentColors}
+            color:{color:Accent};
+        {/block:IfNotDepartmentColors}{block:IfDepartmentColors}
+            color:{color:Frolic};
+        {/block:IfDepartmentColors}
+        
+        /*padding: 0 3px;*/
+    }
     
     blockquote {
         border-left:dotted 2px {color:Accent};
-        padding-left:10px;
+        padding-left:5px;
+        margin-left: 15px;
         /*margin-left:10px;*/
     }
 
@@ -342,7 +405,7 @@ h3 {
     display:inline;
     {block:Permalink}
     text-align:left;
-    line-height:100%;
+    /*line-height:100%;*/
     {/block:Permalink}
 }
 
@@ -367,18 +430,22 @@ h3 {
 
 #footer {
     border-top: 6px double {color:Accent};
+    /*background:green;*/
 }
 
 #folders {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  margin: 0 5vw;
+  /*background:pink;*/
 }
 
 
 .folder {
   padding: 10px;
-  margin: 2vw;
+  margin: 1vw 2vw;
   /*border: 1px solid yellow;*/
+  /*background:red;*/
   
 }
 
@@ -436,6 +503,15 @@ h3 {
 </style>
 <body>
 
+<!--TUMBLR DEFAULTS TEMPLATE-->
+    <!--{block:IfNotDepartmentColors}-->
+    <!--        <p style="color: {color:Accent};">Test text!</p>-->
+    <!--    {/block:IfNotDepartmentColors}{block:IfDepartmentColors}-->
+    <!--        <p style="color: {color:Malice}">Test text!</p>-->
+    <!--{/block:IfDepartmentColors}-->
+
+
+
 <div id="credit"><a href="https://bruisedconscience-reblogs.tumblr.com"
 title="theme by bruisedconscience-reblogs"><span class="lnr
 lnr-code"></span>B.</a></div>
@@ -490,7 +566,7 @@ lnr-code"></span>B.</a></div>
 
       {block:Photo}
           <div class="photo">
-          <img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+            <img src="{PhotoWidth-500}" alt="{PhotoAlt}"/>
           {block:Caption}
               <div class="caption">{Caption}</div>
           {/block:Caption}
@@ -508,9 +584,9 @@ lnr-code"></span>B.</a></div>
           </div>
       {/block:Panorama}
 
-      {block:Photoset}
+    {Block:Photoset}
           <div class="photoset">
-              {Photoset-400}
+              {Photoset}
           {block:Caption}
               <div class="caption">{Caption}</div>
           {/block:Caption}
@@ -568,7 +644,7 @@ lnr-code"></span>B.</a></div>
 
       {block:Audio}
           <div class="audio">
-              {AudioEmbed-400}
+              {AudioEmbed-640}
                   {block:Caption}
                       <div class="caption">{Caption}</div>
                   {/block:Caption}
@@ -634,8 +710,8 @@ lnr-code"></span>B.</a></div>
       <div class="progress bar">
         <div
           class="progress w3-container"
-          style="height: 24px; width: 90%; color: black; background-color:{color:Accent};">
-          90%
+          style="height: 24px; width: {text:Progress 1}%; color: black; background-color:{color:Accent};">
+          {text:Progress 1}%
         </div>
       </div>
     </div>
@@ -646,8 +722,8 @@ lnr-code"></span>B.</a></div>
       <div class="progress bar">
         <div
           class="progress w3-container"
-          style="height: 24px; width: 25%; color: black; background-color:{color:Accent};">
-          25%
+          style="height: 24px; width: {text:Progress 2}%; color: black; background-color:{color:Accent};">
+          {text:Progress 2}%
         </div>
       </div>
     </div>
@@ -657,8 +733,8 @@ lnr-code"></span>B.</a></div>
       <div class="progress bar">
         <div
           class="progress w3-container"
-          style="height: 24px; width: 5%; color: black; background-color:{color:Accent};">
-          5%
+          style="height: 24px; width: {text:Progress 3}%; color: black; background-color:{color:Accent};">
+          {text:Progress 3}%
         </div>
       </div>
     </div>
@@ -668,8 +744,8 @@ lnr-code"></span>B.</a></div>
       <div class="progress bar">
         <div
           class="progress w3-container"
-          style="height: 24px; width: 55%; color: black; background-color:{color:Accent};">
-          55%
+          style="height: 24px; width: {text:Progress 4}%; color: black; background-color:{color:Accent};">
+          {text:Progress 4}%
         </div>
       </div>
     </div>
@@ -681,8 +757,8 @@ lnr-code"></span>B.</a></div>
       <div class="progress bar">
         <div
           class="progress w3-container"
-          style="height: 24px; width: 75%; color: black; background-color:{color:Accent};">
-          75%
+          style="height: 24px; width: {text:Progress 5}%; color: black; background-color:{color:Accent};">
+          {text:Progress 5}%
         </div>
       </div>
     </div>
