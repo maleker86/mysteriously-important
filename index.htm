@@ -1,41 +1,33 @@
 <!----------------------------------------
-*// CONFICTURA INDUSTRIES THEME... //*
-Confictura Industries [Version 9.28.2020]
-(c) 2020 Additionalhopes. All right reserved.
+*// LOMUN THEME... //*
+Lomun Industries [Version 3.28.2025]
+(c) 2025 BruisedConsience. All right reserved.
 
-──██████████████████──
-──████▀ ▀████──
-──███=─▄▀█──█▀▄─=███──
-──███▌──────────▐███──
-──███▌▀▄──▄▄──▄▀▐███──
-──████──▀▀──▀▀──████──
-──█████▄──────▄█████──
-──████████▄▄████████──
------ßūťċĦəɍɚɗ Ъў ĶƦɪ
-----
---/AKA Butchered by KRIS/--
-------@additionalhopes-----
+
+------@bruisedconsience-----
+
 BELOW ARE LINKS TO SOME REALLY COOL PEOPLE:
 1. AMAZING PAGINATION HELP: @themesbyeris //
 https://themesbyeris.tumblr.com/tutorial08
-2. COOL GREEN HEX CODE: Journeyman Geek //
 
-https://superuser.com/questions/361297/what-colour-is-the-dark-green-
-on-old-fashioned-green-screen-computer-displays
-
-3. THEMEMAKER’S CHECKLIST: Egg //
+2. THEMEMAKER’S CHECKLIST: Egg //
 https://egg.design/post/630265876628783104/common-theme-mistakes
-4. BASE FOR ABOVE TEXT ART:
-https://www.messletters.com/en/text-art/
 
 ---------------------------------------->
 <!DOCTYPE html>
-<head>
-<title>{Title}</title>
-<link rel="shortcut icon" href="{Favicon}">
-<link rel="alternate" type="application/rss+xml"
+<html>
+  <head>
 
-href="{RSS}">
+<title>{Title}</title>
+
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/w3css/5/w3.css" />
+    <link
+href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+rel="stylesheet">
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
 
 {block:Description}
 <meta name="description" content="{MetaDescription}" />
@@ -52,8 +44,14 @@ rel="stylesheet">
 content="https://static.tumblr.com/s6sxlad/Z3Gqhfhyl/fsocmask_4.png"/
 >
 <meta name="color:Post Header" content="#eee"/>
+
 <meta name="color:Accent" content="#73cdee"/>
+<meta name="color:Woe" content="#7af09a"/>
+<meta name="color:Malice" content="#2d4ded"/>
+<meta name="color:Frolic" content="#d8f07a"/>
+<meta name="color:Dread" content="#ed8ae7"/>
 <meta name="color:Background" content="#003b64"/>
+
 <meta name="text:Percentage" content="78"/>
 <meta name="text:Link1Title" content="Title 1"/>
 <meta name="text:Link1URL" content="/"/>
@@ -65,11 +63,19 @@ content="https://static.tumblr.com/s6sxlad/Z3Gqhfhyl/fsocmask_4.png"/
 
 ::-webkit-scrollbar {
 width:12px;
-background-color:{color:Background};
+/*background-color:{color:Background};*/
+background:transparent;
 }
 ::-webkit-scrollbar-thumb {
-border:solid 3px {color:Background};
-background-color:{color:Accent};
+border:solid 3px {color:Accent};
+background-color:{color:Background};
+}
+
+:root {
+  /*--randomNumber: random(1,5);*/
+  --accentColor: #73cdee;
+  --backgroundColor: #003b64;
+  /*--accentColor: #fff;*/
 }
 
 * {
@@ -87,21 +93,27 @@ body {
 }
 
 a {
-    color:{color:Accent};
+    color:{color:Woe};
     text-decoration:none;
-    border-bottom:dotted {color:Accent};
+    /*border-bottom:dotted {color:Accent};*/
     /*padding-bottom:3px;*/
-    padding: 0 5px 3px 5px;
+    padding: 0 3px;
 }
 a:hover {
     color:{color:Background};
-    background-color:{color:Accent};
+    background-color:{color:Woe};
     transition: all 0.5s ease;
 }
 b, bold, strong {
     text-transform:uppercase;
     color:{color:Background};
-    background:{color:Accent};
+    background:{color:Dread};
+    padding: 0 3px;
+}
+
+i, em, italic {
+    color:{color:Frolic};
+    /*padding: 0 3px;*/
 }
 
 h2 {
@@ -172,7 +184,7 @@ h3 {
   /*font-size: 1em;*/
   font-weight: bold;
   text-align: right;
-  color: var(--backgroundColor);
+  color: {color:Background};
   -webkit-text-stroke: .08em {color:Accent};
 }
 
@@ -182,54 +194,54 @@ h3 {
   color: #fff;
   text-align: center;
 }
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon {
-    /*left: 50px;*/
-    /*justify-content: center;*/
-    position: absolute;
-    background: transparent;
     
-}
-
-.logo-1 {
-    position: absolute;
-      width: 200px;
-      height: 100px;
-      background: transparent;
-      border: 5px solid {color:Accent};
-      border-radius: 100px / 50px;
-}    
-
-.logo-2 {
-    position: absolute;
-      width: 150px;
-      height: 100px;
-      /*margin-left:25px;*/
-      background: transparent;
-      border: 5px solid {color:Accent};
-      border-radius: 75px / 50px;
-}    
-
-.logo-3 {
-    position: absolute;
-      width: 100px;
-      height: 100px;
-      /*margin-left:50px;*/
-      background: transparent;
-      border: 5px solid {color:Accent};
-      border-radius: 50px / 50px;
-}
-
-
-.logo-1, .logo-2, .logo-3 {
-    transform: scale(.65);
-}
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .icon {
+        /*left: 50px;*/
+        /*justify-content: center;*/
+        position: absolute;
+        background: transparent;
+        
+    }
+    
+    .logo-1 {
+        position: absolute;
+          width: 200px;
+          height: 100px;
+          background: transparent;
+          border: 5px solid {color:Accent};
+          border-radius: 100px / 50px;
+    }    
+    
+    .logo-2 {
+        position: absolute;
+          width: 150px;
+          height: 100px;
+          /*margin-left:25px;*/
+          background: transparent;
+          border: 5px solid {color:Accent};
+          border-radius: 75px / 50px;
+    }    
+    
+    .logo-3 {
+        position: absolute;
+          width: 100px;
+          height: 100px;
+          /*margin-left:50px;*/
+          background: transparent;
+          border: 5px solid {color:Accent};
+          border-radius: 50px / 50px;
+    }
+    
+    
+    .logo-1, .logo-2, .logo-3 {
+        transform: scale(.65);
+    }
 
 
 .description {
@@ -241,19 +253,22 @@ h3 {
     /*padding-left:25%;*/
 }
 
-#header .pagination {
+.pagination {
+    display:flex;
+    justify-content:center;
     margin-bottom:10px;
     /*display: block;*/
     /*position:absolute;*/
     color:{color:Accent};
 }
-#header .pagination a {
-color: {color:Accent};
-text-decoration: none;
-}
-#header .pagination a:hover {
-color: {color:Background};
-}
+
+    .pagination a {
+        color: {color:Accent};
+        text-decoration: none;
+    }
+    .pagination a:hover {
+        color: {color:Background};
+    }
 
     
 #main {
@@ -273,23 +288,30 @@ color: {color:Background};
 /*}*/
 
 .post {
+    text-align:justify;
     padding:10px;
     width:600px;
     margin: auto;
     margin-bottom: 40px;
     background-color:{color:Background};
-    /*border: 1px solid {color:Accent};*/
+    border: 1px solid {color:Accent};
 }
 
-.post img {
-max-width:400px;
-height:auto;
-}
-
-.post video {
-max-width:400px;
-height:auto;
-}
+    .post img {
+        max-width:400px;
+        height:auto;
+    }
+    
+    .post video {
+        max-width:400px;
+        height:auto;
+    }
+    
+    blockquote {
+        border-left:dotted 2px {color:Accent};
+        padding-left:10px;
+        /*margin-left:10px;*/
+    }
 
 
 #info {
@@ -298,51 +320,50 @@ height:auto;
 }
 
 .tags {
-margin-top:10px;
-color:{color:Accent};
+    margin-top:10px;
+    color:{color:Accent};
 }
-.tags a {
-color:{color:Accent};
-text-align:left;
-word-break: normal;
-transition: all 0.5s ease;
-margin-left:5px;
-border:none;
-}
-.tags a:hover {
-color:{color:Background};
-}
-.notes {
+
+    .tags a {
+        color:{color:Accent};
+        text-align:left;
+        word-break: normal;
+        transition: all 0.5s ease;
+        margin-left:5px;
+        border:none;
+    }
     
-color:{color:Accent};
-display:inline;
-{block:Permalink}
-text-align:left;
-line-height:100%;
-{/block:Permalink}
-}
-.notes ol, ul {
-margin-left:15px;
-}
-
-.notes .note img.avatar {
-vertical-align: -4px;
-padding-right: 10px;
-width: 16px;
-height: 16px;
-display:none;
+    .tags a:hover {
+        color:{color:Background};
+    }
+    
+.notes {
+    color:{color:Accent};
+    display:inline;
+    {block:Permalink}
+    text-align:left;
+    line-height:100%;
+    {/block:Permalink}
 }
 
-.note {
-margin-left:20px;
-margin-top:10px;
-padding:2px 0px 0px 0px;
-}
-blockquote {
-border-left:solid 1px {color:Accent};
-padding-left:15px;
-margin-left:10px;
-}
+    .notes ol, ul {
+        margin-left:15px;
+    }
+    
+    .notes .note img.avatar {
+        vertical-align: -4px;
+        padding-right: 10px;
+        width: 16px;
+        height: 16px;
+        display:none;
+    }
+    
+    .note {
+        margin-left:20px;
+        margin-top:10px;
+        padding:2px 0px 0px 0px;
+    }
+
 
 #footer {
     border-top: 6px double {color:Accent};
@@ -358,26 +379,35 @@ margin-left:10px;
   padding: 10px;
   margin: 2vw;
   /*border: 1px solid yellow;*/
+  
 }
 
-.folder > div {
-    border: 2px solid {color:Accent};
-    margin: 1vw 0 1vw 0;
-}
-
-.folder a {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 2px;
-    text-decoration: none;
-}
+    .folder > div {
+        border: 2px solid {color:Accent};
+        margin: 1vw 0 1vw 0;
+    }
+    
+    .folder a {
+        display: flex;
+        justify-content: center;
+        color:{color:Accent};
+        width: 100%;
+        padding: 2px;
+    }
+    
+    .folder a:hover {
+        color:{color:Background};
+        background-color:{color:Accent};
+    }
 
 .progress {
   /*width: 100%;*/
+  padding: .1px;
   position:relative;
-  min-width:1;
+  /*min-width:1;*/
   border:none;
+  font-weight:bold;
+  -webkit-text-stroke: .8px {color:Accent};
 }
 
 /*---CREDIT hey! don't touch this you nerd!---*/
@@ -388,7 +418,7 @@ margin-left:10px;
     position:fixed;
     right:20px;
     bottom:20px;
-    background:#36393f;
+    background-color: {color:Malice};
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -409,6 +439,7 @@ margin-left:10px;
 <div id="credit"><a href="https://bruisedconscience-reblogs.tumblr.com"
 title="theme by bruisedconscience-reblogs"><span class="lnr
 lnr-code"></span>B.</a></div>
+
 
    <div id="container">
    
@@ -443,151 +474,155 @@ lnr-code"></span>B.</a></div>
       </div>
 
 
-      <div id="main">
+<div id="main">
       
-{block:Posts}
-<div class="post">
+  {block:Posts}
+  <div class="post">
 
-    {block:Text}
-    <div class="text">
-    {block:Title}
-        <h3>{Title}</h3>
-    {/block:Title}
-        {Body}
-    </div>
-    {/block:Text}
+      {block:Text}
+      <div class="text">
+      {block:Title}
+          <h3>{Title}</h3>
+      {/block:Title}
+          {Body}
+      </div>
+      {/block:Text}
 
-    {block:Photo}
-        <div class="photo">
-        <img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
-        {block:Caption}
-            <div class="caption">{Caption}</div>
-        {/block:Caption}
-        </div>
-    {/block:Photo}
+      {block:Photo}
+          <div class="photo">
+          <img src="{PhotoURL-400}" alt="{PhotoAlt}"/>
+          {block:Caption}
+              <div class="caption">{Caption}</div>
+          {/block:Caption}
+          </div>
+      {/block:Photo}
 
-    {block:Panorama}
-        <div class="panorama">
-            {LinkOpenTag}
-                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-            {LinkCloseTag}
-            {block:Caption}
-                <div class="caption">{Caption}</div>
-            {/block:Caption}
-        </div>
-    {/block:Panorama}
+      {block:Panorama}
+          <div class="panorama">
+              {LinkOpenTag}
+                  <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+              {LinkCloseTag}
+              {block:Caption}
+                  <div class="caption">{Caption}</div>
+              {/block:Caption}
+          </div>
+      {/block:Panorama}
 
-    {block:Photoset}
-        <div class="photoset">
-            {Photoset-400}
-        {block:Caption}
-            <div class="caption">{Caption}</div>
-        {/block:Caption}
-        </div>
-    {/block:Photoset}
+      {block:Photoset}
+          <div class="photoset">
+              {Photoset-400}
+          {block:Caption}
+              <div class="caption">{Caption}</div>
+          {/block:Caption}
+          </div>
+      {/block:Photoset}
 
-    {block:Quote}
-        <div class="quote">
-            "{Quote}"
-            {block:Source}
-                <div class="source post">{Source}</div>
-            {/block:Source}
-        </div>
-    {/block:Quote}
+      {block:Quote}
+          <div class="quote">
+              "{Quote}"
+              {block:Source}
+                  <div class="source post">{Source}</div>
+              {/block:Source}
+          </div>
+      {/block:Quote}
 
-    {block:Link}
-        <div class="link">
-        
-        <a href="{URL}" class="link" {Target}>{Name}</a>
-        
-        {block:Description}
-            <div class="description">
-                {Description}
-            </div>
-        {/block:Description}
-        </div>
-    {/block:Link}
+      {block:Link}
+          <div class="link">
+          
+          <a href="{URL}" class="link" {Target}>{Name}</a>
+          
+          {block:Description}
+              <div class="description">
+                  {Description}
+              </div>
+          {/block:Description}
+          </div>
+      {/block:Link}
 
-    {block:Chat}
-        <div class="chat">
-            {block:Title}
-                <h3>{Title}</h3>
-            {/block:Title}
-            <ul class="chat">
-                {block:Lines}
-                    <div class="{Alt} user_{UserNumber}">
-                        {block:Label}
-                            <span class="label">{Label}</span>
-                        {/block:Label}
-                        {Line}
-                    </div>
-                {/block:Lines}
-            </ul>
-        </div>
-    {/block:Chat}
+      {block:Chat}
+          <div class="chat">
+              {block:Title}
+                  <h3>{Title}</h3>
+              {/block:Title}
+              <ul class="chat">
+                  {block:Lines}
+                      <div class="{Alt} user_{UserNumber}">
+                          {block:Label}
+                              <span class="label">{Label}</span>
+                          {/block:Label}
+                          {Line}
+                      </div>
+                  {/block:Lines}
+              </ul>
+          </div>
+      {/block:Chat}
 
-{block:Video}
-<div class="video">
-{Video-400}{block:Caption}
-<div class="caption">{Caption}</div>
-{/block:Caption}
-</div>
-{/block:Video}
+      {block:Video}
+          <div class="video">
+          {Video-400}
+              {block:Caption}
+                  <div class="caption">{Caption}</div>
+              {/block:Caption}
+          </div>
+      {/block:Video}
 
-{block:Audio}
-<div class="audio">
-{AudioEmbed-400}{block:Caption}
-<div class="caption">{Caption}</div>
-{/block:Caption}
-</div>
-{/block:Audio}
+      {block:Audio}
+          <div class="audio">
+              {AudioEmbed-400}
+                  {block:Caption}
+                      <div class="caption">{Caption}</div>
+                  {/block:Caption}
+          </div>
+      {/block:Audio}
 
-{block:Answer}
-<table style="border-bottom:1px solid
+      {block:Answer}
+          <table style="border-bottom:1px solid #a0a0a0;padding-bottom:5px;margin-bottom:5px;">
+              <tr>
+                  <td style="vertical-align:top;padding-right:10px;"><img
+                  src="{AskerPortraitURL-64}"></td>
+                  <td style="vertical-align:top;"><strong>{Asker} asked:</strong>
+                      {Question}
+                  </td>
+              </tr>
+          </table>
+          {Answer}
+      {/block:Answer}
+      
+      <div id="info">
+          <div class="notes">
+              {block:Date}
+                  <a href="{Permalink}">
+                      {TimeAgo}
+                  </a>
+              {/block:Date}
+          
+              {block:NoteCount}
+                  {NoteCountWithLabel}
+              {/block:NoteCount}
+          </div>
+          
+              {block:PermalinkPage}
+                  {PostNotes}
+              {/block:PermalinkPage}
+              
+              {block:HasTags}
+                  <div class="tags">
+                      # 
+                      {block:Tags}
+                          <a href="{TagURL}">
+                              {Tag}
+                          </a>
+                      {/block:Tags}
+                  </div>
+              {/block:HasTags}
+          </div>
+      </div>
 
-#a0a0a0;padding-bottom:5px;margin-bottom:5px;">
+      {/block:Posts}
+          
+  </div><!--end main-->
+<!--</div>-->
 
-<tr>
-<td
-
-style="vertical-align:top;padding-right:10px;"><img
-src="{AskerPortraitURL-64}"></td>
-<td
-
-style="vertical-align:top;"><strong>{Asker} asked:</strong>
-{Question}</td>
-
-</tr>
-</table>
-{Answer}
-{/block:Answer}
-<div id="info">
-
-<div class="notes">
-{block:Date}<a
-
-href="{Permalink}">{TimeAgo}</a>{/block:Date}
-
-{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}
-</div>
-{block:PermalinkPage}
-{PostNotes}
-{/block:PermalinkPage}
-
-{block:HasTags}
-
-<div class="tags"> #{block:Tags}
-<a href="{TagURL}">{Tag}</a>
-{/block:Tags}
-</div>
-{/block:HasTags}
-
-</div>
-</div>
-{/block:Posts}
-    
-</div>
-</div><!--end main-->
 
 <!--footer-->
 <div id="footer">
@@ -598,8 +633,8 @@ href="{Permalink}">{TimeAgo}</a>{/block:Date}
       </div>
       <div class="progress bar">
         <div
-          class="progress w3-container w3-cyan"
-          style="height: 24px; width: 90%">
+          class="progress w3-container"
+          style="height: 24px; width: 90%; color: black; background-color:{color:Accent};">
           90%
         </div>
       </div>
@@ -610,62 +645,71 @@ href="{Permalink}">{TimeAgo}</a>{/block:Date}
       <div><a href="{text:Link1URL}" title="{text:Link1Title}">O2</a></div>
       <div class="progress bar">
         <div
-          class="progress w3-container w3-cyan"
-          style="height: 24px; width: 25%">
+          class="progress w3-container"
+          style="height: 24px; width: 25%; color: black; background-color:{color:Accent};">
           25%
         </div>
       </div>
     </div>
 
     <div class="folder">
-      <div><a href="/">O3</a></div>
+      <div><a href="{text:Link2URL}" title="{text:Link2Title}">O3</a></div>
       <div class="progress bar">
         <div
-          class="progress w3-container w3-cyan"
-          style="height: 24px; width: 5%">
+          class="progress w3-container"
+          style="height: 24px; width: 5%; color: black; background-color:{color:Accent};">
           5%
         </div>
       </div>
     </div>
 
     <div class="folder">
-      <div><a href="/">O4</a></div>
-<a href="{text:Link2URL}">{text:Link2Title}</a>
+      <div><a href="{text:Link3URL}" title="{text:Link3Title}">O4</a></div>
       <div class="progress bar">
         <div
-          class="progress w3-container w3-cyan"
-          style="height: 24px; width: 55%">
+          class="progress w3-container"
+          style="height: 24px; width: 55%; color: black; background-color:{color:Accent};">
           55%
         </div>
       </div>
     </div>
 
     <div class="folder">
-      <div><a href="/">O5</a></div>
-<a href="{text:Link3URL}">{text:Link3Title}</a>
+      <div>
+        <a href="/archive" title="Blog Archive">O5</a>
+      </div>
       <div class="progress bar">
         <div
-          class="progress w3-container w3-cyan"
-          style="height: 24px; width: 75%">
+          class="progress w3-container"
+          style="height: 24px; width: 75%; color: black; background-color:{color:Accent};">
           75%
         </div>
       </div>
     </div>
+    
+    
+    
   </div>
+
   
- <a href="/archive">Archive</a>
-<p><div class="pagination">
-{block:PreviousPage}<a href="{PreviousPage}">«
-</a>{/block:PreviousPage}
-{CurrentPage} / {TotalPages}
-{block:NextPage}<a href="{NextPage}"> »</a>{/block:NextPage}
-</div></p>
-  
-</div>
+<!--</div>-->
 
 
-</div>
-</div>
+<!--</div>-->
+<!--</div>-->
+
+<div class="pagination">
+        {block:PreviousPage}
+            <a href="{PreviousPage}">«</a>
+        {/block:PreviousPage}
+        Ox ID {CurrentPage} : Ox ID {TotalPages}
+        {block:NextPage}
+        <a href="{NextPage}"> »</a>
+        {/block:NextPage}
+    </div> 
+    
+  </body>
+</html>
 
 </body>
 </html>
