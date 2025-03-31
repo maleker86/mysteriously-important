@@ -257,9 +257,15 @@ a:hover {
 
 #main {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    
+    /*width: 100vw;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    
     /*background-color:green;*/
     
+    gap: 10px;
     
     background-image: url('{image:Background}');
     
@@ -270,11 +276,15 @@ a:hover {
 }
 
 #desc-box {
-    top: 16vh;
-    position: absolute;
-    width: 40vw;
+    /*top: 16vh;*/
+    /*position: absolute;*/
+    
+    grid-column: 1 / 2;
+    
+    /*width: 20vw;*/
+    
     max-height: 19vh;
-    z-index: 9;
+    z-index: 9999;
     
     display:flex;
     gap: 10px;
@@ -321,7 +331,8 @@ a:hover {
 
 
 .post {
-    grid-column: 2 / 5;
+    grid-column: 2;
+    /*z-index: 9;*/
    
     text-align:justify;
     /*line-height: 125%;*/
@@ -333,6 +344,10 @@ a:hover {
     /*background-color:green;*/
     border: 1px solid {color:Accent};
 }
+
+    .post p, ul, ol {
+        padding-bottom: 5px;
+    }
 
     .post img {
         /*max-width:400px;*/
@@ -355,6 +370,10 @@ a:hover {
     
     .post  ul, ol {
         margin-left: 50px;
+        text-transform: none;
+        
+        font-weight: normal;
+        list-style-type: square;
     }
     
     h1, h2, h3 {
@@ -427,16 +446,18 @@ a:hover {
 
 .tags {
     /*margin-top:10px;*/
-    color:{color:Accent};
+    text-align:left;
+    
 }
 
     .tags a {
         color:{color:Accent};
-        text-align:left;
         word-break: normal;
         transition: all 0.5s ease;
+        
         /*margin-left:5px;*/
-        border:none;
+        /*border:none;*/
+        /*word-wrap: break-word;*/
     }
     
     .tags a:hover {
@@ -444,7 +465,7 @@ a:hover {
     }
     
     .tags a::before {
-        content: "# ";
+        content: "#";
     }
     
 .notes {
@@ -537,6 +558,7 @@ a:hover {
     .pagination a {
         color: {color:Accent};
         text-decoration: none;
+        padding: 0px 5px;
     }
     .pagination a:hover {
         color: {color:Background};
@@ -757,13 +779,9 @@ lnr-code"></span>B.</a></div>
               {/block:PermalinkPage}
               
               {block:HasTags}
-                  <div class="tags">
-                      {block:Tags}
-                          <a href="{TagURL}">
-                              {Tag}
-                          </a>
-                      {/block:Tags}
-                  </div>
+                    <div class="tags">
+                      {block:Tags}<a href="{TagURL}">{Tag}</a>{/block:Tags}          
+                      </div>
               {/block:HasTags}
           </div>
       </div>
@@ -850,11 +868,11 @@ lnr-code"></span>B.</a></div>
 
 <div class="pagination">
         {block:PreviousPage}
-            <a href="{PreviousPage}">«</a>
+            <a href="{PreviousPage}">← </a>
         {/block:PreviousPage}
-        Ox ID {CurrentPage} : Ox ID {TotalPages}
-        {block:NextPage}
-        <a href="{NextPage}"> »</a>
+        Ox 15DBD4A - {CurrentPage} : Ox OAEAFC - {TotalPages}
+        {block:NextPage} 
+        <a href="{NextPage}"> → </a>
         {/block:NextPage}
     </div> 
     
